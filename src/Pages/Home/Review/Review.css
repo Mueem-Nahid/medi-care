@@ -1,0 +1,36 @@
+.my-img {
+    width: 230px;
+    height: 160px;
+}
+
+.background {
+    background-color: white;
+}
+
+.my-btn {
+    background-color: #29648A;
+}
+.my-btn:hover{
+    background-color: #464866;
+}
+
+.card-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+.card-box .card-thumbnail {
+    max-height: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: 1s;
+}
+.card-box .card-thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.icon {
+    margin-bottom: 15px;
+    color: goldenrod;
+}
