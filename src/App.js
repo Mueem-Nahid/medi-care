@@ -8,6 +8,7 @@ import Header from './Pages/Home/Header/Header';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import NotFound from './Pages/NotFound/NotFound';
+import Posts from './Pages/Posts/Posts';
 import Services from './Pages/Services/Services';
 import ShowDetails from './Pages/Services/ShowDetails/ShowDetails';
 import SignUp from './Pages/SignUp/SignUp';
@@ -33,6 +34,9 @@ function App() {
         </PrivateRoute>
         <PrivateRoute path="/get-the-service">
           <GetTheService></GetTheService>
+        </PrivateRoute>
+        <PrivateRoute path="/posts">
+          <Posts></Posts>
         </PrivateRoute>
         <Route exact path="/about-us">
           <AboutUs></AboutUs>
