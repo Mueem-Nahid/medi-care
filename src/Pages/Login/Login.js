@@ -8,6 +8,7 @@ const Login = () => {
     const location = useLocation();
     const history = useHistory();
 
+    const [error, setError] = useState(''); 
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
 
@@ -39,12 +40,19 @@ const Login = () => {
         .then(result => {
             history.push(redirect_url);
         })
+        .catch(error => {
+            setError(error.message);
+        });
     }
 
     return (
         <div>
-
         <form onSubmit={handleEmailLogin} className="container col-md-6 mt-5  fw-normal">
+        {
+            error ? <div className="alert alert-danger" role="alert">
+            {error}
+            </div> : ''
+        }
         <div className="mb-3" controlId="formBasicEmail">
             <label>Email address</label>
             <input onBlur={handleEmailChange} className="form-control" type="email" placeholder="Enter email" required/>

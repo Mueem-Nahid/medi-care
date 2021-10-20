@@ -34,9 +34,6 @@ const Header = () => {
                 <Nav.Link  as={NavLink} to="/about-us" className="fw-bolder">
                     About Us
                 </Nav.Link>
-                {/* <Nav.Link  as={NavLink} to="/login" className="fw-bolder">
-                    Login
-                </Nav.Link> */}
                 {
                     user.email ? <Nav.Link to="/user" as={NavLink} className="fw-bolder">{user.displayName ? user.displayName : user.email}</Nav.Link> : ""
                 }

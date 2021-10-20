@@ -12,6 +12,7 @@ import Posts from './Pages/Posts/Posts';
 import Services from './Pages/Services/Services';
 import ShowDetails from './Pages/Services/ShowDetails/ShowDetails';
 import SignUp from './Pages/SignUp/SignUp';
+import User from './Pages/User/User';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
@@ -41,6 +42,9 @@ function App() {
         <Route exact path="/about-us">
           <AboutUs></AboutUs>
         </Route>
+        <PrivateRoute path="/user">
+          <User></User>
+        </PrivateRoute>
         <Route exact path="/login">
           <Login></Login>
         </Route>

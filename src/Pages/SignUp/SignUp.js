@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const SignUp = () => {
-    const {createUser} = useAuth();
+    const {createUser, error} = useAuth();
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     //const [error, setError] = useState('');
@@ -25,8 +25,14 @@ const SignUp = () => {
     }
 
     return (
-        <div>
+        <div className="">
+            <h2 className="text-center mt-5 fw-bold">SignUp here</h2>
         <form onSubmit={handleRegistration} className="container col-md-6 mt-5  fw-normal">
+        {
+            error ? <div className="alert alert-danger" role="alert">
+            {error}
+        </div> : ''
+        }
         <div className="mb-3">
             <label>Email address</label>
             <input onBlur={handleEmailChange} className="form-control" type="email" placeholder="Enter email" required/>

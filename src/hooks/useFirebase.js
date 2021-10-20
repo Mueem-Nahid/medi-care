@@ -6,6 +6,7 @@ initializeAuth();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
+    const [error, setError] = useState('');
 
     //to fix reloading problem 
     const [isLoading, setIsLoading] = useState(true);
@@ -29,13 +30,14 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, pass)
         .then(result => {
           const user = result.user;
-          //setError(''); //if signup successful then set setError as empty string
+          setError('SignUp complete, please go to LogIn page and LogIn'); //if signup successful then set setError as empty string
           //verifyEmail();
           //setUserName();
           //setError('Please verify your email');
+          logOut();
         })
         .catch(error => {
-          console.log(error.message);
+          setError(error.message);
         })
     }
 
@@ -53,6 +55,7 @@ const useFirebase = () => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if(user) {
                 setUser(user);
+                setError('');
             }else {
                 setUser({})
             }
@@ -67,7 +70,8 @@ const useFirebase = () => {
         isLoading,
         signInUsingGoogle,
         signInUsingEmailAndPass,
-        createUser
+        createUser,
+        error
     }
 }
 
